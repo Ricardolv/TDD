@@ -10,7 +10,8 @@ import br.com.richard.tdd.model.Produto;
  * @since 02/04/2015
  */
 public class MaiorEMenor {
-
+	
+	
 	private Produto menor;
 	private Produto maior;
 
