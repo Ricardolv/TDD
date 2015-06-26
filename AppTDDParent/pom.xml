@@ -13,8 +13,8 @@
 	</properties>
 
 	<modules>
-		<module>Capitulo1-2</module>
-		<module>Capitulo3</module>
+		<module>introducao-tdd</module>
+		<module>simplicidade-babysteps</module>
 	</modules>
 
 	<dependencyManagement>
