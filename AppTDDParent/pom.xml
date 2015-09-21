@@ -16,6 +16,7 @@
 		<module>introducao-tdd</module>
 		<module>simplicidade-babysteps</module>
 		<module>tdd-desing-classes</module>
+		<module>tdd-coesao</module>
 	</modules>
 
 	<dependencyManagement>
