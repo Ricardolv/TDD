@@ -6,21 +6,24 @@ public class GeradorDeNotaFiscal {
 
 	private final List<AcaoAposGerarNota> acoes;
 	private final Relogio relogio;
+	private final Tabela tabela;
 
-	public GeradorDeNotaFiscal(List<AcaoAposGerarNota> acoes, Relogio relogio) {
+	public GeradorDeNotaFiscal(List<AcaoAposGerarNota> acoes, Relogio relogio, Tabela tabela) {
 		this.acoes = acoes;
 		this.relogio = relogio;
+		this.tabela = tabela;
 	}
 	
 	public GeradorDeNotaFiscal(List<AcaoAposGerarNota> acoes) {
-		this(acoes, new RelogioDoSistema());
+		this(acoes, new RelogioDoSistema(), new TabelaDoGoverno());
 	}
-
+	
 	public NotaFiscal gera(Pedido pedido) {
 		
 		NotaFiscal nf = new NotaFiscal(
 				pedido.getCliente(),
-				pedido.getValorTotal() * 0.94,
+				pedido.getValorTotal() * 
+							tabela.paraValor(pedido.getValorTotal()),
 				relogio.hoje());
 
 		for (AcaoAposGerarNota acao : acoes) {
